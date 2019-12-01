@@ -1,0 +1,11 @@
+26. High freight charges - 2015
+We're continuing on the question above on high freight charges. 
+Now, instead of using all the orders we have, we only want to see orders from the year 2015.
+
+Query:
+select top 3 ShipCountry,
+	averagefreight = avg(Freight)
+from Orders
+where year(OrderDate)= 1998
+group by ShipCountry
+order by averagefreight DESC;
