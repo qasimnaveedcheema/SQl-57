@@ -1,0 +1,9 @@
+30. Customers with no orders
+There are some customers who have never actually placed an order. Show these customers.
+
+Query:
+select Customers_CustomerID = Customers.CustomerID,
+		Orders_CustomerID = Orders.CustomerID
+from Customers
+left join  Orders ON  Orders.CustomerID=Customers.CustomerID 
+where Orders.CustomerID is NULL;
